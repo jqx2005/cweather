@@ -96,8 +96,8 @@ public class CoolWeatherDB {
         List<City> list = new ArrayList<City>();
         Cursor cursor = db.query("City",null,"province_id = ?",new String[]{String.valueOf(provinceId)},null,null,null);
         if(cursor.moveToFirst()){
-            City city = new City();
             do{
+                City city = new City();
                 city.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 city.setCityName(cursor.getString(cursor.getColumnIndex("city_name")));
                 city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
